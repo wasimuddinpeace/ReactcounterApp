@@ -20,9 +20,9 @@ class Counter extends Component {
             <span   style={{fontSize:30}}  className={this.getColourForclasses()}>{this.getCountFromState()}</span>
             <button style={this.styles} className="btn btn-secondary btn-sm">Increment</button>
             <ul>
-               {this.state.tags
-                .map(tag=><li key={tag}>{tag}</li>)
-                }
+               {
+                   this.rendertags()
+               }
             </ul>
             </div>
             );
@@ -37,6 +37,12 @@ class Counter extends Component {
     let classes="badge m-2 badge-"
     classes+= this.state.count===0? "warning": "primary"
     return classes;
+}
+
+    rendertags(){
+
+    if(this.state.tags.length ===0) return "Please create tags!!!"
+    return  this.state.tags.map(tag=><li key={tag}>{tag}</li>)
 }
 
 }
