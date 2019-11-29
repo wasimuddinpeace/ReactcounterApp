@@ -11,14 +11,18 @@ class Counter extends Component {
       fontWeight:'bold'
     };
     
-    
-    //embeding xpresiion
+    // constructor(){
+    //    super();
+    //    this.OnClickEventHandler = this.OnClickEventHandler.bind(this);
+
+    // }
+    //embeding xpresion
     //Object Destructuring
     render() { 
         return (
         <div>
-            <span   style={{fontSize:30}}  className={this.getColourForclasses()}>{this.getCountFromState()}</span>
-            <button style={this.styles} className="btn btn-secondary btn-sm">Increment</button>
+            <span  style={{fontSize:30}}  className={this.getColourForclasses()}>{this.getCountFromState()}</span>
+            <button onClick={product=>this.OnClickEventHandler(product)} style={this.styles} className="btn btn-secondary btn-sm">Increment</button>
             <ul>
                {
                    this.rendertags()
@@ -27,6 +31,11 @@ class Counter extends Component {
             </div>
             );
     
+    }
+    
+    OnClickEventHandler= product =>{
+        console.log(product);
+     this.setState({count:this.state.count+1}); 
     }
     getCountFromState(){
         const {count} = this.state;
