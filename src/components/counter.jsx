@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
 
     state={
-          count:0,
+          count:this.props.value,
           tags:['tag1','tag2','tag3']
     };
 
@@ -18,7 +18,8 @@ class Counter extends Component {
     // }
     //embeding xpresion
     //Object Destructuring
-    render() { 
+    render() {
+        console.log(this.props)
         return (
         <div>
             <span  style={{fontSize:30}}  className={this.getColourForclasses()}>{this.getCountFromState()}</span>
