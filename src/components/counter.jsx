@@ -19,9 +19,9 @@ class Counter extends Component {
     //embeding xpresion
     //Object Destructuring
     render() {
-        console.log(this.props)
         return (
         <div>
+            {this.props.children}
             <span  style={{fontSize:30}}  className={this.getColourForclasses()}>{this.getCountFromState()}</span>
             <button onClick={product=>this.OnClickEventHandler(product)} style={this.styles} className="btn btn-secondary btn-sm">Increment</button>
             <ul>
