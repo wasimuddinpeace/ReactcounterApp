@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 class Counter extends Component {
 
     state={
-          count:this.props.value,
+          count:this.props.value,//this is how we initialize values from other components from where we have pased the data here.
           tags:['tag1','tag2','tag3']
     };
 
